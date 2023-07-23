@@ -3,7 +3,8 @@ import Todo from "../Todo";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
-import { addTodoAction } from "../../redux/actions";
+// import { addTodoAction } from "../../redux/actions";
+import todoListSlice from "./todosSlice";
 import { todosRemainingSelector } from "../../redux/selectors";
 
 export default function TodoList() {
@@ -16,7 +17,7 @@ export default function TodoList() {
 
   const handleAddTodo = () => {
     dispatch(
-      addTodoAction({
+      todoListSlice.actions.addTodo({
         id: uuidv4(),
         name: todoName,
         completed: false,

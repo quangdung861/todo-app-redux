@@ -1,35 +1,23 @@
-const initState = {
-  search: "",
-  status: "All",
-  priorities: [],
-};
+import { createSlice } from "@reduxjs/toolkit";
 
-const filtersReducer = (state = initState, action) => {
-  switch (action.type) {
-    case "filters/searchText": {
-      const data = action.payload;
-      return {
-        ...state,
-        search: data,
-      };
-    }
-    case "filters/statusFilterChange": {
-      const data = action.payload;
-      return {
-        ...state,
-        status: data,
-      };
-    }
-    case "filters/prioritiesFilterChange": {
-      const data = action.payload;
-      return {
-        ...state,
-        priorities: data,
-      };
-    }
-    default:
-      return state;
-  }
-};
+export default createSlice({
+  name: "filters",
+  initialState: {
+    search: "",
+    status: "All",
+    priorities: [],
+  },
+  reducers: {
+    searchText: (state, action) => {
+      // mutation || thực tế vẫn là immutation do @reduxjs/toolkit sử dụng 1 library tên là IMMER để chuyển đổi
+      state.search = action.payload;
+    }, // => {type: 'filters/searchText'}
+    statusFilterChange: (state, action) => {
+      state.status = action.payload;
+    },
+    prioritiesFilterChange: (state, action) => {
+      state.priorities = action.payload;
+    },
+  },
+});
 
-export default filtersReducer;
