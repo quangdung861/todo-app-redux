@@ -1,8 +1,3 @@
-// export const addTodoAction = {
-//   type: "todoList/addTodo",
-//   payload: { id: 5, name: "learn football", completed: false, priority: "Medium" },
-// };
-
 export const addTodoAction = (data) => {
   return {
     type: "todoList/addTodo",
