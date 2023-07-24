@@ -1,12 +1,6 @@
 import { useEffect, useState } from "react";
 import { Col, Row, Input, Typography, Radio, Select, Tag } from "antd";
 import { useDispatch } from "react-redux";
-// import {
-//   prioritiesFilterChange,
-//   searchFilterChange,
-//   statusFilterChange,
-// } from "../../redux/actions";
-
 import filtersSlice from "./filtersSlice";
 
 const { Search } = Input;

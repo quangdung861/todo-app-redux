@@ -21,3 +21,10 @@ export default createSlice({
   },
 });
 
+/**
+ * => {
+ *   reducer,
+ *   actions,
+ * }
+ */
+
